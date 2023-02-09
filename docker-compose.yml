@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  postgis14:
+    env_file: "./docker.env"
+    image: kartoza/postgis:14-3.3--v2022.07.22
+    ports:
+      - '5432:5432'
+  redis:
+    image: redis
+    restart: always
+    ports:
+     - "6379:6379"
+  nestjs: 
+    env_file: "./docker.env"
+    image: nestjs
+    depends_on:
+      - postgis14
+      - redis
+    ports:
+      - "3000:3000"
