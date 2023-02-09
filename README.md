@@ -6,6 +6,9 @@ A server-side application is build on the Nestjs framework to simulate scanning 
 
 The scan process in real life will take time to process, so the process will do as a background job.
 
+## High level architecture
+[See detail](https://github.com/namhoang1604/code_scanning/wiki/High-level-architecture)
+
 ## Features
 
 - Create a scan event through `POST /api/scan`
